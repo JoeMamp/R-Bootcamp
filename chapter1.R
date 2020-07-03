@@ -3,6 +3,7 @@
 
 
 # =-= R as a calculator =-=
+
 2 + 2
 
 2 * pi
@@ -77,3 +78,38 @@ cat(chars, sep = "\n")
 # logical vector
 bools <- c(TRUE, FALSE, TRUE) # looks like bools are case-sensitive
 bools
+
+
+# =-= Working with indices and subsets =-=
+
+vals <- seq(2, 12, by = 2)
+vals
+vals[3]
+vals[3:5]
+
+vals[c(1, 3, 6)]
+vals[-c(1, 3, 6)] # Using -c(x) gives everything that is not in c(x)
+vals[c(rep(TRUE, 3), rep(FALSE, 2), TRUE)]
+
+# This is one way to read in the contents of a csv file
+air <- read.table("data/airline.csv", header=TRUE,
+  sep=",")
+
+# create a simple vector from the airline dataset
+delay <- air$DepDelay
+delay[1:10]
+
+vals[4] <- -35
+vals[1:2] <- 0
+
+vals <- rnorm(100)
+vals[1:8]
+# How does R process these next subset operations?
+vals[vals < 0] <- 0 # looks like this replaces every negative with 0
+vals[1:8]
+
+crazymakers <- delay[delay > 300]
+crazymakers[1:10]
+
+crazymakers <- crazymakers[ !is.na(crazymakers)]
+crazymakers[1:10]
