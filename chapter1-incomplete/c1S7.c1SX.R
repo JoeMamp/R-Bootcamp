@@ -67,4 +67,16 @@ length(myList)
 
 # =-= Other classes of R objects =-=
 # R has many approaches to OOP(o-o p). Popular, but kinda klunky.
-# The most basic is
+# The most basic is 'S3' objects (generally built upon lists).
+
+mod <- lm(air$DepDelay ~ air$Distance) # illustration ONLY - poorly-specified model!
+class(mod)
+is.list(mod)
+names(mod)
+mod$coefficients
+mod[['coefficients']]
+mod[[1]]
+
+summary(air$DepDelay)
+summary(mod)
+# summary.lm
