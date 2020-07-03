@@ -1,0 +1,33 @@
+---
+title: "Chapter 1"
+output: html_notebook
+---
+# joe mampillil - 07.02.2020
+# bootcamp chapter 1 - basics
+
+Add a new chunk by *Ctrl+Alt+I*.
+Press *Ctrl+Shift+K* to preview the HTML file.
+
+```{r}
+# numeric vector
+nums <- c(1.1, 3, -5.7)
+devs <- rnorm(5)
+devs
+```
+
+
+```{r}
+# integer vector
+ints <- c(1L, 5L, -3L) # force storage as integer not decimal number
+# 'L' is for 'long integer'
+
+idevs <- sample(ints, 100, replace=TRUE)
+```
+
+```{r}
+# character vector
+chars <- c('hi', 'hallo', "mother's", 'father\'s',
+  "She said, 'hi'", "He said, \"hi\"")
+chars
+```
+
