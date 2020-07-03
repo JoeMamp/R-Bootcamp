@@ -63,3 +63,8 @@ myList[1:3] # subset of a list is a list
 myList$newOne <- 'more weird stuff'
 names(myList)
 length(myList)
+
+
+# =-= Other classes of R objects =-=
+# R has many approaches to OOP(o-o p). Popular, but kinda klunky.
+# The most basic is
