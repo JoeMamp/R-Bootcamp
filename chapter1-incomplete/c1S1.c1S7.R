@@ -1,6 +1,6 @@
 # joe mampillil - 07.02.2020
 # bootcamp chapter 1 - basics
-# file - chapter1[1-7]
+# file - c1S1.c1S7.R
 
 
 # =-= R as a calculator =-=
