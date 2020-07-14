@@ -96,4 +96,4 @@ depDiffArr <- c(subset$ArrDelay - subset$DepDelay, na.rm = TRUE)
 l1 = length(depDiffArr)
 delayPos[depDiffArr > 0]
 l2 = length(depDiffArr[delayPos])
-sprintf("%i flights made up for the arrival delay", l1 - l2, quote)
+sprintf("%i flights (about %.2f percent) made up for the arrival delay", l1 - l2, l2/l1*100)
