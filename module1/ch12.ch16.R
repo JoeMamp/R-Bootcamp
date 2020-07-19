@@ -1,6 +1,6 @@
 # joe mampillil - 07.12.2020
 # bootcamp chapter 1 - basics
-# file - ch12.chX.R
+# file - ch12.ch16.R
 
 # =-= Converting between different types of objects =-=
 # Can use the as() family of functions
@@ -81,13 +81,18 @@ help(par)
 
 # =-= Basics =-=
 
-x = mean(subset$DepDelay, na.rm = TRUE) # remove the N/A values so we can actually do the calculation
+x = mean(air$DepDelay, na.rm = TRUE) # remove the N/A values so we can actually do the calculation
 
-round(x, digits = 2) # round()
+round(x, digits = 2) # round() could do round(x, digits = 2)
+signif(x, 2) # signif() could do round(x, digits = 0)
 
-signif(x, 2) # signif()
+kmsPerMile <- 1.60934
+dist_km <- air$Distance * kmsPerMile
+c(dist_km[1], air$Distance[1])
 
-depShorterArr <- c(subset$DepDelay < subset$ArrDelay, na.rm = TRUE)
+# depShorterArr <- c(subset$DepDelay < subset$ArrDelay, na.rm = TRUE)
+delayWorsening <- air$DepDelay < air$ArrDelay
+head(delayWorsening)
 
 
 # =-= Using the ideas =-=
@@ -97,6 +102,25 @@ l1 = length(depDiffArr)
 l2 = length(depDiffArr[depDiffArr > 0])
 sprintf("%i flights (about %.2f percent) made up for the arrival delay", l1 - l2, l2/l1*100)
 
-airDD6 = air$DepDelay[air$DepDelay <= 60]
-airDD6[airDD6 < 0] <- 0
+# airDD6 = air$DepDelay[air$DepDelay <= 60]
+# airDD6[airDD6 < 0] <- 0
+# hist(airDD6, breaks=5) # breaks argument is just a suggestion
+airDD6 <- air$DepDelay
+airDD6[airDD6 < 0] <- 0  
+airDD6[airDD6 > 60] <- 60
 hist(airDD6)
+hist(airDD6, nclass = 100)
+hist(airDD6, nclass = 5) # nclass argument is just a suggestion
+
+subChiHou <- air[air$Dest == "ORD" | air$Dest == "IAH", ]
+plot(subChiHou$CRSDepTime, subChiHou$DepDelay, main = 'Departure delay by time of day')
+subChiHou$color = "blue"
+subChiHou$color[subChiHou$Dest == "IAH"] <- "orange"
+plot(subChiHou$CRSDepTime, subChiHou$DepDelay, col = subChiHou$color, main = 'Departure delay by time of day')
+
+y <- rnorm(10)
+x <- rnorm(10)
+mod <- lm(y ~ x)
+summ <- summary(mod)
+r2 <- summ$r.squared
+rse <- summ$sigma
