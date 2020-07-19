@@ -94,6 +94,9 @@ depShorterArr <- c(subset$DepDelay < subset$ArrDelay, na.rm = TRUE)
 
 depDiffArr <- c(subset$ArrDelay - subset$DepDelay, na.rm = TRUE)
 l1 = length(depDiffArr)
-delayPos[depDiffArr > 0]
-l2 = length(depDiffArr[delayPos])
+l2 = length(depDiffArr[depDiffArr > 0])
 sprintf("%i flights (about %.2f percent) made up for the arrival delay", l1 - l2, l2/l1*100)
+
+airDD6 = air$DepDelay[air$DepDelay <= 60]
+airDD6[airDD6 < 0] <- 0
+hist(airDD6)

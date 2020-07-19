@@ -1,6 +1,7 @@
 # joe mampillil - 07.02.2020
 # bootcamp chapter 1 - basics
 # file - c1S1.c1S7.R
+setwd("C:/Users/josep/Code/Personal/Practice/Learning - R/bootcamp")
 
 
 # =-= R as a calculator =-=
