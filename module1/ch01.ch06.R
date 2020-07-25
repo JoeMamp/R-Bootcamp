@@ -94,8 +94,7 @@ vals[-c(1, 3, 6)] # Using -c(x) gives everything that is not in c(x)
 vals[c(rep(TRUE, 3), rep(FALSE, 2), TRUE)]
 
 # This is one way to read in the contents of a csv file
-air <- read.table("data/airline.csv", header=TRUE,
-  sep=",")
+air <- read.table("data/airline.csv", header=TRUE, sep=",")
 
 # create a simple vector from the airline dataset
 delay <- air$DepDelay
