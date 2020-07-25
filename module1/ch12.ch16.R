@@ -1,5 +1,5 @@
 # joe mampillil - 07.12.2020
-# bootcamp chapter 1 - basics
+# bootcamp module 1 - basics
 # file - ch12.ch16.R
 
 # =-= Converting between different types of objects =-=
