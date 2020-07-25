@@ -1,5 +1,5 @@
 # joe mampillil - 07.03.2020
-# bootcamp chapter 1 - basics
+# bootcamp module 1 - basics
 # file - ch7.ch11.R
 
 # =-= R is a functional language =-=
