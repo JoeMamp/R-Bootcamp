@@ -30,3 +30,13 @@ apropos('x')
 
 
 # =-= Packages (R's killer app) =-=
+
+# install.packages(c('chron','colorspace','DBI','devtools','dichromat','digest',
+# 'doParallel', 'dplyr', 'fields','foreach','ggplot2',
+# 'gridExtra','gtable','inline', 'iterators','knitr',
+# 'labeling','lme4','mapproj','maps','munsell', 'proto',
+# 'rbenchmark','RColorBrewer','Rcpp','reshape2','rJava',
+# 'RSQLite', 'scales','spam','stringr','tidyr','xlsx',
+# 'xlsxjars','xtable'))
+
+# for a list of the objects in a package, along with a brief description, use: library(help = packageName)
